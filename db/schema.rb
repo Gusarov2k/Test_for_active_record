@@ -14,8 +14,6 @@
 ActiveRecord::Schema.define(version: 20180829165741) do
 
   create_table "carts", force: :cascade do |t|
-    t.string  "login"
-    t.string  "email"
     t.integer "user_id"
   end
 
