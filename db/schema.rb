@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20180829165741) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "login"
+    t.string "email"
   end
 
   create_table "virtual_items", force: :cascade do |t|
