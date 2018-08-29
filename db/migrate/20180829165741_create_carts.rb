@@ -3,6 +3,8 @@ class CreateCarts < ActiveRecord::Migration
     create_table :carts do |t|
     	t.string 	:login
     	t.string 	:email
+
+    	# t.references :user
 		t.integer 	:user_id
     end
   end
