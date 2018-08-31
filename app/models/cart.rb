@@ -4,4 +4,13 @@ class Cart < ActiveRecord::Base
 
 	has_many :positions
 	has_many :items, through: :positions
+
+# update quantity item if add + 1
+	def add_item(i)
+		if items.include?(i)
+			positions.where(item_id: i.id).first.increment!(:quantity)
+		else
+			positions.create(item: i, quantity: 1)
+		end
+	end
 end
