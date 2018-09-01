@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/snitko/Heritage.git
+  revision: a4941633b9e362b5ad7fb9e1ab438abc20dd5e3c
+  specs:
+    heritage (0.3.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -159,6 +165,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  heritage (= 0.3.4)!
   hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
