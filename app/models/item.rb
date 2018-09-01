@@ -7,6 +7,8 @@ class Item < ActiveRecord::Base
 						source_type: "Order"
 	has_many 	:images, as: :imageable
 
+	acts_as_predecessor
+
 	after_create :increment_category_counter
 	after_destroy :decrement_category_counter
 
@@ -20,5 +22,5 @@ class Item < ActiveRecord::Base
 	def decrement_category_counter
 		category.inc!(:items_count, -1)
 	end
-	
+
 end
