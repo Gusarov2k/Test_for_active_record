@@ -9,18 +9,18 @@ class Item < ActiveRecord::Base
 
 	acts_as_predecessor
 
-	after_create :increment_category_counter
-	after_destroy :decrement_category_counter
+	# after_create :increment_category_counter
+	# after_destroy :decrement_category_counter
 
 
-	private
+	# private
 
-	def increment_category_counter
-		category.inc!(:items_count)
-	end
+	# def increment_category_counter
+	# 	category.inc!(:items_count)
+	# end
 
-	def decrement_category_counter
-		category.inc!(:items_count, -1)
-	end
+	# def decrement_category_counter
+	# 	category.inc!(:items_count, -1)
+	# end
 
 end
