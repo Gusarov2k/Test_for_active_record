@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180901192035) do
+ActiveRecord::Schema.define(version: 20180902031341) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "user_id"
@@ -36,14 +36,19 @@ ActiveRecord::Schema.define(version: 20180901192035) do
     t.datetime "updated_at",     null: false
   end
 
+  add_index "images", ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
+
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.float    "price"
     t.float    "weight"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "used",        default: false
   end
+
+  add_index "items", ["name"], name: "index_items_on_name"
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
@@ -64,6 +69,8 @@ ActiveRecord::Schema.define(version: 20180901192035) do
     t.string "login"
     t.string "email"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "virtual_items", force: :cascade do |t|
     t.datetime "created_at", null: false
