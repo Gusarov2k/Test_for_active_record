@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resourses :items
+  resources :items
 end
